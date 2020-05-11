@@ -5,3 +5,5 @@ To do:
 - Model database and implement microservices
 - Remodel architecture to CQRS + DDD + Onion
 - Unit Tests
+- Make client repo
+- Make traffic generator repo
