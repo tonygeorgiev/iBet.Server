@@ -1,10 +1,10 @@
-﻿namespace iBet.Server.Controllers
+﻿namespace iBet.Server.Controllers.Base
 {
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
     [Route("[controller]")]
-    public class HomeController : ControllerBase
+    public abstract class ApiController : ControllerBase
     {
     }
 }
