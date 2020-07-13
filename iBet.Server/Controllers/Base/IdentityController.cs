@@ -10,23 +10,19 @@ namespace iBet.Server.Controllers.Base
 {   
     public class IdentityController : ApiController
     {
-        private readonly UserManager<User> userManager;
         private readonly IIdentityService identityService;
         private readonly ApplicationSettings appSettings;
 
         public IdentityController(
-            UserManager<User> userManager,
             IIdentityService identityService,
             IOptions<ApplicationSettings> appSettings)
         {
-            this.userManager = userManager;
             this.identityService = identityService;
             this.appSettings = appSettings.Value;
         }
 
         [HttpPost]
         [Route(nameof(Register))]
-
         public async Task<IActionResult> Register(RegisterRequestModel model)
         {
             var user = new User
@@ -35,7 +31,7 @@ namespace iBet.Server.Controllers.Base
                 UserName = model.UserName
             };
 
-            var result = await this.userManager.CreateAsync(user, model.Password);
+            var result = await this.identityService.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
@@ -49,13 +45,14 @@ namespace iBet.Server.Controllers.Base
         [Route(nameof(Login))]
         public async Task<ActionResult<LoginResponseModel>> Login(LoginRequestModel model)
         {
-            var user = await this.userManager.FindByNameAsync(model.UserName);
+            var user = await this.identityService.FindByNameAsync(model.UserName);
+
             if (user == null)
             {
                 return Unauthorized();
             }
 
-            var passwordValid = await this.userManager.CheckPasswordAsync(user, model.Password);
+            var passwordValid = await this.identityService.CheckPasswordAsync(user, model.Password);
             if (!passwordValid)
             {
                 return Unauthorized();
