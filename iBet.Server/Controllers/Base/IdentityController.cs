@@ -41,6 +41,13 @@ namespace iBet.Server.Controllers.Base
             return BadRequest(result.Errors);
         }
 
+        [HttpGet]
+        [Route(nameof(GetUsers))]
+        public IActionResult GetUsers()
+        {
+            return Ok("Some user by the name of bob");
+        }
+
         [HttpPost]
         [Route(nameof(Login))]
         public async Task<ActionResult<LoginResponseModel>> Login(LoginRequestModel model)
