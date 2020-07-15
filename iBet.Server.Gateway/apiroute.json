@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "44301"
+          "Port": "44393"
         }
       ],
       "UpstreamPathTemplate": "/identity/register",
@@ -18,7 +18,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "44301"
+          "Port": "44393"
         }
       ],
       "UpstreamPathTemplate": "/identity/login",

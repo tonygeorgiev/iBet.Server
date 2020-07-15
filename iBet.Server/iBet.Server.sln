@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30028.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iBet.Server", "iBet.Server.csproj", "{9B228D0D-2A7C-44AF-81D7-42FB811C73E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBet.Server.Gateway", "..\iBet.Server.Gateway\iBet.Server.Gateway.csproj", "{5AE00A99-8CD6-4E06-9021-60DC3E5AB446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iBet.Server.Gateway", "..\iBet.Server.Gateway\iBet.Server.Gateway.csproj", "{5AE00A99-8CD6-4E06-9021-60DC3E5AB446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBet.Server.Services.Identity", "..\iBet.Server.Services.Identity\iBet.Server.Services.Identity.csproj", "{F7C65142-C193-4B44-A29D-933D177D2F56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5AE00A99-8CD6-4E06-9021-60DC3E5AB446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE00A99-8CD6-4E06-9021-60DC3E5AB446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE00A99-8CD6-4E06-9021-60DC3E5AB446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C65142-C193-4B44-A29D-933D177D2F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C65142-C193-4B44-A29D-933D177D2F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C65142-C193-4B44-A29D-933D177D2F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C65142-C193-4B44-A29D-933D177D2F56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
