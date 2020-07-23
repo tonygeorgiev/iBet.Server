@@ -76,7 +76,9 @@
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
             => services
-                .AddTransient<IIdentityService, IdentityService>();
+                .AddTransient<IIdentityService, IdentityService>()
+                .AddTransient<IProfileService, ProfileService>()
+                .AddTransient<ICurrentUserService, CurrentUserService>();
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
             => services.AddSwaggerGen(c =>
