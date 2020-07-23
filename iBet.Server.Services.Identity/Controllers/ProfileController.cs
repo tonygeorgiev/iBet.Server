@@ -9,12 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace iBet.Server.Services.Identity.Controllers
 {
-    public class ProfilesController : ApiController
+    public class ProfileController : ApiController
     {
         private readonly IProfileService profiles;
         private readonly ICurrentUserService currentUser;
 
-        public ProfilesController(
+        public ProfileController(
             IProfileService profiles,
             ICurrentUserService currentUser)
         {
@@ -23,12 +23,14 @@ namespace iBet.Server.Services.Identity.Controllers
         }
 
         [HttpGet]
+        [Route(nameof(Mine))]
         public async Task<ProfileServiceModel> Mine()
             => await this.profiles.ByUser(this.currentUser.GetId());
 
 
 
         [HttpPut]
+        [Route(nameof(Update))]
         public async Task<ActionResult> Update(UpdateProfileRequestModel model)
         {   
             var result = await this.profiles.Update(
