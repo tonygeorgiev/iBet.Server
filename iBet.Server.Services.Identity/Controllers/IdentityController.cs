@@ -35,10 +35,10 @@ namespace iBet.Server.Services.Identity.Controllers
 
             if (result.Succeeded)
             {
-                return Ok();
+              return new JsonResult(new { Result = "User registered successfully" });
             }
 
-            return BadRequest(result.Errors);
+            return new JsonResult(new { Result = result.Errors });
         }
 
         [HttpPost]
